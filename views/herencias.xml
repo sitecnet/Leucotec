@@ -21,7 +21,7 @@
           <field name="comment" position="after">
               <field name="pedidos" />
           </field>
-          <field name="user_id" position="after">
+          <field name="title" position="after">
               <field name="RFC" />
               <field name="cedula" />
               <field name="especialidad"
