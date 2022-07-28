@@ -23,5 +23,3 @@ class resPartner(models.Model):
     RFC = fields.Char('RFC')
     cedula = fields.Char('Cedula Profesional')
     especialidad = fields.Many2one('leucotec.especialidades', 'Especialidad')
-
-resPartner()

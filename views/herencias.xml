@@ -7,7 +7,7 @@
       <field name="model">res.users</field>
       <field name="inherit_id" ref="base.view_users_form"/>
       <field name="arch" type="xml">
-          <field name="partner_id" position="after">
+          <field name="login" position="after">
               <field name="agente" />
           </field>
       </field>
@@ -21,7 +21,7 @@
           <field name="comment" position="after">
               <field name="pedidos" />
           </field>
-          <field name="lang" position="after">
+          <field name="user_id" position="after">
               <field name="RFC" />
               <field name="cedula" />
               <field name="especialidad"
