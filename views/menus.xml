@@ -1,6 +1,6 @@
 <odoo>
     <!-- Menus de Pedidos -->
-    <menuitem id="menu_leucotec_ventas_root" name="Ventas" sequence="1" web_icon="leucotec,static/src/img/ventas.png"//>
+    <menuitem id="menu_leucotec_ventas_root" name="Ventas" sequence="1" web_icon="leucotec,static/src/img/ventas.png"/>
     <menuitem id="menu_leucotec_configuracion_categ" name="Configuracion" parent="menu_leucotec_ventas_root" sequence="2"/>
     <menuitem id="menu_leucotec_ventas_categ" name="Ventas" parent="menu_leucotec_ventas_root" sequence="0"/>
 

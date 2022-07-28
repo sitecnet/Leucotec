@@ -63,6 +63,6 @@ class pedidos(models.Model):
 
         name = fields.Many2one('leucotec.catalogo', 'Producto', required=True, ondelete='cascade', index=True,
                                copy=False)
-        linea_id = fields.Many2one('leucotec.pedidos', String='Orden de Referencia', ondelete='cascade', index=True, copy=False)
+        linea_id = fields.Many2one('leucotec.pedidos', ondelete='cascade', index=True, copy=False)
         cantidad = fields.Integer('Cantidad')
         precio = fields.Char('Precio')
