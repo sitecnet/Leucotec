@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+  <data>
+    <record id="view_leucotec_catalogo_form" model="ir.ui.view">
+      <field name="name">view.leucotec.catalogo.form</field>
+      <field name="model">leucotec.catalogo</field>
+      <field name="arch" type="xml">
+        <form string="Catalogo Form">
+          <sheet>
+          	<group>
+              <field name="name"/>
+              <field name="linea"
+               options="{'no_create_edit': True},
+                           {'no_quick_create'}"/>
+                <field name="presentacion"/>
+                <field name="proveedor"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+      <record id="view_leucotec_catalogo_tree" model="ir.ui.view">
+          <field name="name">view.leucotec.catalogo.tree</field>
+          <field name="model">leucotec.catalogo</field>
+          <field name="arch" type="xml">
+            <tree string="Catalogo Tree">
+              <field name="name"/>
+              <field name="linea"/>
+            </tree>
+          </field>
+        </record>
+
+    <record id="view_leucotec_linea_form" model="ir.ui.view">
+      <field name="name">view.leucotec.linea.form</field>
+      <field name="model">leucotec.linea</field>
+      <field name="arch" type="xml">
+        <form string="Linea Form">
+          <sheet>
+          	<group>
+              <field name="name"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+      <record id="view_leucotec_linea_tree" model="ir.ui.view">
+          <field name="name">view.leucotec.linea.tree</field>
+          <field name="model">leucotec.linea</field>
+          <field name="arch" type="xml">
+            <tree string="Linea Tree">
+              <field name="name"/>
+            </tree>
+          </field>
+        </record>
+  <!--
+    <record id="action_leucotec_catalogo_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Catalogo</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">leucotec.catalogo</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Catalogo
+        </p>
+        <p>
+          Presiona para Crear productos en el Catalogo
+        </p>
+      </field>
+    </record>
+
+     <record id="action_leucotec_linea_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Linea</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">leucotec.linea</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Linea
+        </p>
+        <p>
+          Presiona para Crear lineas de producto en el Catalogo
+        </p>
+      </field>
+    </record>
+    
+      <menuitem id="menu_leucotec_ventas_root" name="Ventas" sequence="10"/>
+      <menuitem id="menu_leucotec_configuracion_categ" name="Configuracion" parent="menu_leucotec_ventas_root" sequence="2"/>
+      <menuitem id="menu_leucotec_catalogo_action" name="Catalogo" parent="menu_leucotec_configuracion_categ" action="action_leucotec_catalogo_view" sequence="1"/>
+      <menuitem id="menu_leucotec_linea_action" name="Linea" parent="menu_leucotec_configuracion_categ" action="action_leucotec_linea_view" sequence="2"/>
+  -->
+
+  </data>
+</odoo>

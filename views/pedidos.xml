@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+  <data>
+
+    <record id="seq_pedidos" model="ir.sequence">
+      <field name="name">Secuencia de Pedidos</field>
+      <field name="code">pedidos</field>
+      <field name="prefix">Ped</field>
+      <field name="padding">4</field>
+      <field name="company_id" eval="False"/>
+    </record>
+
+   <record id="view_leucotec_pedidos_form" model="ir.ui.view">
+      <field name="name">view.leucotec.pedidos.form</field>
+      <field name="model">leucotec.pedidos</field>
+      <field name="arch" type="xml">
+        <form string="Pedidos Form">
+          <sheet>
+          	<group>
+                <group>
+                <field name="name"/>
+                <field name="vendedor"
+                options="{'no_create_edit': True},
+                {'no_quick_create'}"/>
+                <field name="fecha"/>
+                <field name="linea"
+                options="{'no_create_edit': True},
+                           {'no_quick_create'}"/>
+            </group>
+              <group>
+              <field name="cliente"/>
+                <field name="direccion"/>
+                <field name="pago"/>
+            </group>
+                </group>
+              <group>
+              <group>
+              <field name="horario"/>
+              <field name="entrega"/>
+            </group>
+            <group>
+                <field name="factura"/>
+                <field name="uso_cfdi"
+                attrs="{'invisible': [('factura','=', False)]}"/>
+                <field name="otro_cfdi"
+                attrs="{'invisible': [('uso_cfdi','!=', 'otro')]}"/>
+            </group>
+            </group>
+                  <field name="producto">
+                          <tree string="Productos" editable="bottom">
+                              <field name="name"/>
+                              <field name="cantidad"/>
+                              <field name="precio"/>
+                          </tree>
+                  </field>
+                <field name="comentarios"/>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+      <record id="view_leucotec_pedidos_tree" model="ir.ui.view">
+          <field name="name">view.leucotec.pedidos.tree</field>
+          <field name="model">leucotec.pedidos</field>
+          <field name="arch" type="xml">
+            <tree string="Pedidos Tree">
+                <field name="fecha"/>
+              <field name="name"/>
+              <field name="linea"/>
+                <field name="producto"/>
+                <field name="cliente"/>
+            </tree>
+          </field>
+        </record>
+<!--
+    <record id="action_leucotec_pedidos_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Pedidos</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">leucotec.pedidos</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Pedidos
+        </p>
+        <p>
+          Presiona para Crear un pedido
+        </p>
+      </field>
+    </record>
+
+        <menuitem id="menu_leucotec_ventas_categ" name="Ventas" parent="menu_leucotec_ventas_root" sequence="0"/>
+        <menuitem id="menu_leucotec_pedidos_action" name="Pedidos" parent="menu_leucotec_ventas_categ" action="action_leucotec_pedidos_view" sequence="1"/>
+-->
+  </data>
+</odoo>

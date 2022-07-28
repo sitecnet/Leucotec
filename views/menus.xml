@@ -1,0 +1,42 @@
+<odoo>
+    <!-- Menus de Pedidos -->
+    <menuitem id="menu_leucotec_ventas_root" name="Ventas" sequence="1" web_icon="leucotec,static/src/img/ventas.png"//>
+    <menuitem id="menu_leucotec_configuracion_categ" name="Configuracion" parent="menu_leucotec_ventas_root" sequence="2"/>
+    <menuitem id="menu_leucotec_ventas_categ" name="Ventas" parent="menu_leucotec_ventas_root" sequence="0"/>
+
+    <!-- Acciones de Ventana -->
+    <record id="action_leucotec_catalogo_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Catalogo</field>
+      <field name="res_model">leucotec.catalogo</field>
+      <field name="view_mode">tree,form</field>     
+    </record>
+
+    <record id="action_leucotec_linea_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Linea</field>
+      <field name="res_model">leucotec.linea</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_leucotec_pedidos_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Pedidos</field>
+      <field name="res_model">leucotec.pedidos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acciones de Menu -->
+    <menuitem id="menu_leucotec_pedidos_action" 
+    name="Pedidos" 
+    parent="menu_leucotec_ventas_categ" 
+    action="action_leucotec_pedidos_view" sequence="1"/> 
+
+    <menuitem id="menu_leucotec_catalogo_action" 
+    name="Catalogo" 
+    parent="menu_leucotec_configuracion_categ" 
+    action="action_leucotec_catalogo_view" sequence="1"/>
+
+    <menuitem id="menu_leucotec_linea_action" 
+    name="Linea" 
+    parent="menu_leucotec_configuracion_categ" 
+    action="action_leucotec_linea_view" sequence="2"/>
+
+</odoo>
