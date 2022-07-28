@@ -8,3 +8,5 @@ access_catalogo_base,leucotec.catalogo,model_leucotec_catalogo,pedidos_grupo_bas
 access_catalogo_admin,leucotec.catalogo,model_leucotec_catalogo,pedidos_grupo_gerente,1,1,1,1
 access_linea_base,leucotec.linea,model_leucotec_linea,pedidos_grupo_base,1,0,0,0
 access_linea_admin,leucotec.linea,model_leucotec_linea,pedidos_grupo_gerente,1,1,1,1
+access_presentacion_base,leucotec.presentacion,model_leucotec_presentacion,pedidos_grupo_base,1,0,0,0
+access_presentacion_admin,leucotec.presentacion,model_leucotec_presentacion,pedidos_grupo_gerente,1,1,1,1
