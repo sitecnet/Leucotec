@@ -2,6 +2,12 @@
 
 from odoo import fields, models, api
 
+class especialidades(models.Model):
+        _name = 'leucotec.especialidades'
+        _rec_name = 'name'
+        _description = "Especialidades de medicos"
+        name = fields.Char('Especialidad', required=True, )
+
 class resUsers(models.Model):
     _inherit = "res.users"
     _description = "Campos extra de Usuarios"

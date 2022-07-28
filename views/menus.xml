@@ -23,6 +23,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="action_leucotec_especialidades_view" model="ir.actions.act_window">
+      <field name="name">Leucotec especialidades</field>
+      <field name="res_model">leucotec.especialidades</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- Acciones de Menu -->
     <menuitem id="menu_leucotec_pedidos_action" 
     name="Pedidos" 
@@ -38,5 +44,10 @@
     name="Linea" 
     parent="menu_leucotec_configuracion_categ" 
     action="action_leucotec_linea_view" sequence="2"/>
+
+    <menuitem id="menu_leucotec_especialidades_action" 
+    name="Especialidades" 
+    parent="contacts.res_partner_menu_config" 
+    action="action_leucotec_especialidades_view" sequence="10"/>
 
 </odoo>

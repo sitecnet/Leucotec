@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pedidos_base,leucotec.pedidos,model_leucotec_pedidos,pedidos_grupo_base,1,0,0,0
+access_pedidos_vendedores,leucotec.pedidos,model_leucotec_pedidos,pedidos_grupo_vendedores,1,1,1,0
+access_pedidos_admin,leucotec.pedidos,model_leucotec_pedidos,pedidos_grupo_gerente,1,1,1,1
+access_especialidades_base,leucotec.specialidades,model_leucotec_especialidades,pedidos_grupo_base,1,0,0,0
+access_especialidades_admin,leucotec.specialidades,model_leucotec_especialidades,pedidos_grupo_gerente,1,1,1,1
+access_catalogo_base,leucotec.catalogo,model_leucotec_catalogo,pedidos_grupo_base,1,0,0,0
+access_catalogo_admin,leucotec.catalogo,model_leucotec_catalogo,pedidos_grupo_gerente,1,1,1,1
+access_linea_base,leucotec.linea,model_leucotec_linea,pedidos_grupo_base,1,0,0,0
+access_linea_admin,leucotec.linea,model_leucotec_linea,pedidos_grupo_gerente,1,1,1,1

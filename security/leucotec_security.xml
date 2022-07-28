@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record model="ir.module.category" id="module_category_pedidos">
+            <field name="name">Pedidos Leucotec</field>
+            <field name="description">Categorias de seguridad para Pedidos</field>
+            <field name="sequence">45</field>
+        </record>
+
+        <record id="pedidos_grupo_base" model="res.groups">
+            <field name="name">Grupo de solo lectura</field>
+            <field name="category_id" ref="module_category_pedidos"/>
+        </record>
+
+
+        <record id="pedidos_grupo_vendedores" model="res.groups">
+            <field name="name">Vendedores</field>
+            <field name="category_id" ref="module_category_pedidos"/>
+            <field name="implied_ids" eval="[(4, ref('pedidos_grupo_base'))]"/>
+        </record>
+
+        <record id="pedidos_grupo_gerente" model="res.groups">
+            <field name="name">Gerente</field>
+            <field name="category_id" ref="module_category_pedidos"/>
+            <field name="implied_ids" eval="[(4, ref('pedidos_grupo_vendedores'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+
+        <!-- Reglas de acceso interno -->
+        <record model="ir.rule" id="pedidos_registros_regla">
+            <field name="name">Solo ver sus propios pedidos</field>
+            <field name="model_id" ref="model_leucotec_pedidos"/>
+            <field name="domain_force">['|',('vendedor','=',user.id),('vendedor','=',False)]</field>
+            <field name="groups" eval="[(4, ref('pedidos_grupo_vendedores'))]"/>
+        </record>
+
+
+         <record model="ir.rule" id="pedidos_registros_gerente_regla">
+            <field name="name">Puede ver todos los pedidos</field>
+            <field name="model_id" ref="model_leucotec_pedidos"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('pedidos_grupo_gerente'))]"/>
+        </record>
+
+        <record model="ir.rule" id="clientes_registros_regla">
+            <field name="name">Solo ver sus propios clientes</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+            <field name="groups" eval="[(4, ref('pedidos_grupo_vendedores'))]"/>
+        </record>
+
+
+        <record model="ir.rule" id="clientes_registros_gerente_regla">
+            <field name="name">Puede ver todos los clientes</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('pedidos_grupo_gerente'))]"/>
+        </record>
+
+
+         <record model="ir.rule" id="no_editar_estado_cancelada">
+            <field name="name">No editar cuando el estado sea cancelado</field>
+            <field name="model_id" ref="model_leucotec_pedidos"/>
+            <field name="domain_force">[('estado','=','entregado')]</field>
+            <field name="groups" eval="[(4, ref('pedidos_grupo_base'))]"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="False"/>
+        </record>
+
+    </data>
+</odoo>
