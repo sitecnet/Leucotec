@@ -12,8 +12,7 @@ class pedidos(models.Model):
     def _default_fecha(self):
         return fields.Date.context_today(self)
 
-    name = fields.Char(string='Pedido', required=True, copy=False, readonly=True, index=True,
-                       default=lambda self: ('New'))
+    name = fields.Char(string='Pedido')
     linea = fields.Many2one('leucotec.linea', 'Linea de Producto', required=True,)
     producto = fields.One2many('leucotec.lineas', 'linea_id', string='Productos', copy=True, auto_join=True)
     vendedor = fields.Many2one('res.users', string='Vendedor', default=lambda self: self.env.user)
