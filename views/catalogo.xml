@@ -54,6 +54,30 @@
             </tree>
           </field>
         </record>
+
+      <record id="view_leucotec_presentacion_form" model="ir.ui.view">
+        <field name="name">view.leucotec.presentacion.form</field>
+        <field name="model">leucotec.presentacion</field>
+        <field name="arch" type="xml">
+          <form string="Presentacion Form">
+            <sheet>
+              <group>
+                <field name="name"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+      <record id="view_leucotec_presentacion_tree" model="ir.ui.view">
+          <field name="name">view.leucotec.presentacion.tree</field>
+          <field name="model">leucotec.presentacion</field>
+          <field name="arch" type="xml">
+            <tree string="Presentacion Tree">
+              <field name="name"/>
+            </tree>
+          </field>
+        </record>
   <!--
     <record id="action_leucotec_catalogo_view" model="ir.actions.act_window">
       <field name="name">Leucotec Catalogo</field>
