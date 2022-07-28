@@ -78,6 +78,30 @@
             </tree>
           </field>
         </record>
+
+      <record id="view_leucotec_proveedor_form" model="ir.ui.view">
+        <field name="name">view.leucotec.proveedor.form</field>
+        <field name="model">leucotec.proveedor</field>
+        <field name="arch" type="xml">
+          <form string="Proveedor Form">
+            <sheet>
+              <group>
+                <field name="name"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+      <record id="view_leucotec_proveedor_tree" model="ir.ui.view">
+          <field name="name">view.leucotec.proveedor.tree</field>
+          <field name="model">leucotec.proveedor</field>
+          <field name="arch" type="xml">
+            <tree string="Proveedor Tree">
+              <field name="name"/>
+            </tree>
+          </field>
+        </record>
   <!--
     <record id="action_leucotec_catalogo_view" model="ir.actions.act_window">
       <field name="name">Leucotec Catalogo</field>

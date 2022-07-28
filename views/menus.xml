@@ -35,6 +35,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="action_leucotec_proveedor_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Proveedores</field>
+      <field name="res_model">leucotec.proveedor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- Acciones de Menu -->
     <menuitem id="menu_leucotec_pedidos_action" 
     name="Pedidos" 
@@ -58,7 +64,12 @@
 
     <menuitem id="menu_leucotec_presentacion_action" 
     name="Presentación" 
-    parent="contacts.res_partner_menu_config" 
+    parent="menu_leucotec_configuracion_categ" 
     action="action_leucotec_presentacion_view" sequence="20"/>
+
+    <menuitem id="menu_leucotec_proveedor_action" 
+    name="Proveedor" 
+    parent="menu_leucotec_configuracion_categ" 
+    action="action_leucotec_proveedor_view" sequence="20"/>
 
 </odoo>
