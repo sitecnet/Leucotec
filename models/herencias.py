@@ -14,7 +14,6 @@ class resPartner(models.Model):
     _description = "Campos extra de clientes"
 
     pedidos = fields.One2many('leucotec.pedidos', 'cliente', string='Pedidos', copy=True, auto_join=True)
-    visitas = fields.One2many('leucotec.visitas', 'cliente', string='Visitas', copy=True, auto_join=True)
     RFC = fields.Char('RFC')
     cedula = fields.Char('Cedula Profesional')
     especialidad = fields.Many2one('leucotec.especialidades', 'Especialidad')
