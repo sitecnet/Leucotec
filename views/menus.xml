@@ -31,7 +31,7 @@
 
     <record id="action_leucotec_presentacion_view" model="ir.actions.act_window">
       <field name="name">Leucotec Presentaciones</field>
-      <field name="res_model">leucotec.presentaciones</field>
+      <field name="res_model">leucotec.presentacion</field>
       <field name="view_mode">tree,form</field>
     </record>
 
