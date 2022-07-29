@@ -50,11 +50,12 @@ class pedidos(models.Model):
     comentarios = fields.Text('Comentarios')
     foto = fields.Binary('Foto del Pago', groups='leucotec.pedidos_grupo_pagos')
     #######Automatizacion de nombre consecutivo#########
-    @api.model
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('pedidos') or ('New')
-        res = super(pedidos, self).create(vals)
-        return res
+
+   # @api.model
+    #def create(self, vals):
+     #   vals['name'] = self.env['ir.sequence'].next_by_code('pedidos') or ('New')
+      #  res = super(pedidos, self).create(vals)
+       # return res
 
     class lineas(models.Model):
         _name = 'leucotec.lineas'
