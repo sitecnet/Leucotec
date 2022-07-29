@@ -78,24 +78,16 @@
             </tree>
           </field>
         </record>
-<!--
-    <record id="action_leucotec_pedidos_view" model="ir.actions.act_window">
-      <field name="name">Leucotec Pedidos</field>
-      <field name="type">ir.actions.act_window</field>
-      <field name="res_model">leucotec.pedidos</field>
-      <field name="view_mode">tree,form</field>
-      <field name="help" type="html">
-        <p class="oe_view_nocontent_create">
-          Pedidos
-        </p>
-        <p>
-          Presiona para Crear un pedido
-        </p>
-      </field>
-    </record>
 
-        <menuitem id="menu_leucotec_ventas_categ" name="Ventas" parent="menu_leucotec_ventas_root" sequence="0"/>
-        <menuitem id="menu_leucotec_pedidos_action" name="Pedidos" parent="menu_leucotec_ventas_categ" action="action_leucotec_pedidos_view" sequence="1"/>
--->
+        <record id="view_leucotec_pedidos_search" model="ir.ui.view">
+          <field name="name">view.leucotec.pedidos.search</field>
+          <field name="model">leucotec.pedidos</field>
+          <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="cliente"/>
+            </search>
+          </field>
+        </record>
   </data>
 </odoo>
