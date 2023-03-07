@@ -14,7 +14,7 @@ class pedidos(models.Model):
     ###Funcion direccion automatica######
     def _default_direccion(self):
         res = self.cliente.street + self.cliente.street2 + self.cliente.city
-        return res(self)
+        return res
 
     name = fields.Char(string='Pedido', required=True, copy=False, readonly=True, index=True,
                        default=lambda self: ('New'))
