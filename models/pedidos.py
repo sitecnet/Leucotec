@@ -11,6 +11,10 @@ class pedidos(models.Model):
     ###Funcion Fecha automatica######
     def _default_fecha(self):
         return fields.Date.context_today(self)
+    ###Funcion direccion automatica######
+    def _default_direccion(self):
+        res = self.cliente.street + self.cliente.street2 + self.cliente.city
+        return res(self)
 
     name = fields.Char(string='Pedido', required=True, copy=False, readonly=True, index=True,
                        default=lambda self: ('New'))
@@ -35,7 +39,7 @@ class pedidos(models.Model):
                                ('Amex', 'Amex'),
                                ], string='Metodo de Pago', default='01')
     horario = fields.Char('Rango de horario de entrega')
-    direccion = fields.Char('Direccion de Entrega', compute='_compute_name', store="True")
+    direccion = fields.Char('Direccion de Entrega', default=_default_direccion)
     entrega = fields.Date('Fecha de Entrega')
     factura = fields.Boolean('¿Requiere facturar?')
     observaciones = fields.Text('Observaciones')
@@ -56,11 +60,6 @@ class pedidos(models.Model):
         vals['name'] = self.env['ir.sequence'].next_by_code('pedidos') or ('New')
         res = super(pedidos, self).create(vals)
         return res
-    #######Automatizacion de direccion#########
-    @api.depends
-    def _compute_name(self):    
-        for record in self:        
-            record.direccion = record.cliente.street + record.cliente.street2 + record.cliente.city
 
     class lineas(models.Model):
         _name = 'leucotec.lineas'
