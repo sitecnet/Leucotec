@@ -35,7 +35,7 @@ class pedidos(models.Model):
                                ('Amex', 'Amex'),
                                ], string='Metodo de Pago', default='01')
     horario = fields.Char('Rango de horario de entrega')
-    direccion = fields.Char('Direccion de Entrega', default=lambda self: self.cliente.street)
+    direccion = fields.Char('Direccion de Entrega', default=lambda self: self.env.cliente.street)
     entrega = fields.Date('Fecha de Entrega')
     factura = fields.Boolean('¿Requiere facturar?')
     observaciones = fields.Text('Observaciones')
