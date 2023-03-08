@@ -8,8 +8,13 @@ class pedidos(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Modelo principal para levantar pedidos"
 
-
-        
+    #######Automatizacion de direccion#########
+    @api.depends("cliente")
+    def _default_direccion(self):
+        calle = {}
+        return {
+            calle : self.cliente.street + self.cliente.street2
+        }         
 
     ###Funcion Fecha automatica######
     def _default_fecha(self):
@@ -55,13 +60,7 @@ class pedidos(models.Model):
     comentarios = fields.Text('Comentarios')
     foto = fields.Binary('Foto del Pago', groups='leucotec.pedidos_grupo_pagos')
     
-    #######Automatizacion de direccion#########
-    @api.depends("cliente")
-    def _default_direccion(self):
-        calle = {}
-        return {
-            calle : self.cliente.street + self.cliente.street2
-        } 
+
     #######Automatizacion de nombre consecutivo#########
     @api.model
     def create(self, vals):
