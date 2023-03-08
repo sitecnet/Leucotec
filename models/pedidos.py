@@ -8,10 +8,7 @@ class pedidos(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = "Modelo principal para levantar pedidos"
 
-    #######Automatizacion de direccion#########
-    @api.onchange("cliente")
-    def _default_direccion(self):
-        return self.cliente.street(self)
+
         
 
     ###Funcion Fecha automatica######
@@ -41,7 +38,7 @@ class pedidos(models.Model):
                                ('Amex', 'Amex'),
                                ], string='Metodo de Pago', default='01')
     horario = fields.Char('Rango de horario de entrega')
-    direccion = fields.Char('Direccion de Entrega', default=_default_direccion)
+    direccion = fields.Char('Direccion de Entrega', compute=_default_direccion, store=True, readonly=False,)
     entrega = fields.Date('Fecha de Entrega')
     factura = fields.Boolean('¿Requiere facturar?')
     observaciones = fields.Text('Observaciones')
@@ -58,7 +55,13 @@ class pedidos(models.Model):
     comentarios = fields.Text('Comentarios')
     foto = fields.Binary('Foto del Pago', groups='leucotec.pedidos_grupo_pagos')
     
-
+    #######Automatizacion de direccion#########
+    @api.depends("cliente")
+    def _default_direccion(self):
+        calle = {}
+        return {
+            calle : self.cliente.street + self.cliente.street2
+        } 
     #######Automatizacion de nombre consecutivo#########
     @api.model
     def create(self, vals):
