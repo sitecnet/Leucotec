@@ -11,7 +11,7 @@ class pedidos(models.Model):
     #######Automatizacion de direccion#########
     @api.onchange("cliente")
     def _default_direccion(self):
-        calle = str(self.cliente.street) + str(self.cliente.street2)
+        calle = self.cliente.street
         return calle
 
     ###Funcion Fecha automatica######
