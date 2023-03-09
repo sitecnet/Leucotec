@@ -11,7 +11,16 @@ class pedidos(models.Model):
     #######Automatizacion de direccion#########
     @api.depends("cliente")
     def _default_direccion(self):
-        self.direccion = str(self.cliente.street) + " " + str(self.cliente.street2)
+        calle1 = " "
+        calle2 = " "
+        ciudad = " "
+        if self.cliente.street != False:
+            calle1 = str(self.cliente.street)
+        if self.cliente.street2 != False:
+            calle2 = str(self.cliente.street2)
+        if self.cliente.city != False:
+            ciudad = str(self.cliente.city)        
+        self.direccion = calle1 + " " + calle2 + " " + ciudad
     ###Funcion Fecha automatica######
     def _default_fecha(self):
         return fields.Date.context_today(self)
