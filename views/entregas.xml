@@ -16,9 +16,11 @@
                         {'no_quick_create'}"/>
                             </group>
                         </group>
-                        <field name="image_1024"/>
-                        <field name="firma"/>
-                        <field name="comentarios"/>
+                        <group>
+                            <field name="image_1024"/>
+                            <field name="firma" widget="signature"/>
+                            <field name="comentarios"/>
+                        </group>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"/>
