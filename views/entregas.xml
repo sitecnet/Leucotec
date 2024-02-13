@@ -16,7 +16,7 @@
                         {'no_quick_create'}"/>
                             </group>
                         </group>
-                        <field name="imagen_1024"/>
+                        <field name="image_1024"/>
                         <field name="firma"/>
                         <field name="comentarios"/>
                     </sheet>
