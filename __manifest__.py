@@ -25,7 +25,7 @@
     'version': '2',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','contacts', 'base_setup', 'web_google_maps','image.mixin'],
+    'depends': ['base','contacts', 'base_setup', 'web_google_maps'],
 
     # always loaded
     'data': [
