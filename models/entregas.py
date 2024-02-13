@@ -3,7 +3,7 @@ from odoo import models, fields, api
 class entregas(models.Model):
     _name = 'leucotec.entregas'
     _description = "Registro de entregas de productos"
-    _inherit = ['image.mixin']
+    _inherit = ['image.mixin', 'mail.thread', 'mail.activity.mixin']
     _rec_name = 'name'
 
     name = fields.Char('Numero de pedido', required=True,)
