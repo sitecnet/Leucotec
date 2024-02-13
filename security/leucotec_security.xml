@@ -26,6 +26,21 @@
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
         </record>
 
+       <record model="ir.module.category" id="module_category_entregas">
+            <field name="name">Entregas Leucotec</field>
+            <field name="description">Categorias de seguridad para entregas</field>
+            <field name="sequence">46</field>
+        </record>
+
+        <record id="entregas_grupo_repartidores" model="res.groups">
+            <field name="name">Repartidores</field>
+            <field name="category_id" ref="module_category_entregas"/>
+        </record>
+
+        <record id="entregas_grupo_supervisor_entregas" model="res.groups">
+            <field name="name">Supervisor Entregas</field>
+            <field name="category_id" ref="module_category_entregas"/>
+        </record>
 
         <!-- Reglas de acceso interno -->
         <record model="ir.rule" id="pedidos_registros_regla">
@@ -41,6 +56,21 @@
             <field name="model_id" ref="model_leucotec_pedidos"/>
             <field name="domain_force">[(1,'=',1)]</field>
             <field name="groups" eval="[(4, ref('pedidos_grupo_gerente'))]"/>
+        </record>
+
+        <record model="ir.rule" id="entrega_registros_regla">
+            <field name="name">Solo ver sus propias entregas</field>
+            <field name="model_id" ref="model_leucotec_entregas"/>
+            <field name="domain_force">['|',('usuario','=',user.id),('usuario','=',False)]</field>
+            <field name="groups" eval="[(4, ref('entregas_grupo_repartidores'))]"/>
+        </record>
+
+
+         <record model="ir.rule" id="entregas_registros_supervisor_regla">
+            <field name="name">Puede ver todas las entregas</field>
+            <field name="model_id" ref="model_leucotec_entregas"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('entregas_grupo_supervisor_entregas'))]"/>
         </record>
 
         <record model="ir.rule" id="clientes_registros_regla">

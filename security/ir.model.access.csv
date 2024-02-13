@@ -14,3 +14,5 @@ access_presentacion_base,leucotec.presentacion,model_leucotec_presentacion,pedid
 access_presentacion_admin,leucotec.presentacion,model_leucotec_presentacion,pedidos_grupo_gerente,1,1,1,1
 access_proveedor_base,leucotec.proveedor,model_leucotec_proveedor,pedidos_grupo_base,1,0,0,0
 access_proveedor_admin,leucotec.proveedor,model_leucotec_proveedor,pedidos_grupo_gerente,1,1,1,1
+access_entregas_repartidores,leucotec.entregas,model_leucotec_entregas,entregas_grupo_repartidores,1,0,1,0
+access_entregas_supervisor_entregas,leucotec.entregas,model_leucotec_entregas,entregas_grupo_supervisor_entregas,1,0,0,0

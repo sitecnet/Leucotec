@@ -3,3 +3,4 @@
 from . import catalogo
 from . import pedidos
 from . import herencias
+from . import entregas

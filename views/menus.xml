@@ -72,4 +72,23 @@
     parent="menu_leucotec_configuracion_categ" 
     action="action_leucotec_proveedor_view" sequence="20"/>
 
+     <!-- Menus de entregas -->
+    <menuitem id="menu_leucotec_entregas_root" name="Entregas" sequence="1" web_icon="leucotec,static/src/img/entregas.png"/>
+    <menuitem id="menu_leucotec_entregas_categ" name="Entregas" parent="menu_leucotec_entregas_root" sequence="0"/>
+
+    <!-- Acciones de Ventana -->
+
+    <record id="action_leucotec_entregas_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Entregas</field>
+      <field name="res_model">leucotec.entregas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acciones de Menu -->
+
+    <menuitem id="menu_leucotec_entregas_action" 
+    name="Entregas" 
+    parent="menu_leucotec_entregas_categ" 
+    action="action_leucotec_entregas_view" sequence="1"/> 
+
 </odoo>

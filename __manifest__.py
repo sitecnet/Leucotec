@@ -10,7 +10,7 @@
        
        Catalogo de productos
        
-       Modulo para levantar pedidos
+       Modulo para levantar pedidos y registrar entregas
 
 	Complemento de CRM
     """,
@@ -25,7 +25,7 @@
     'version': '2',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','contacts', 'base_setup', 'web_google_maps'],
+    'depends': ['base','contacts', 'base_setup', 'web_google_maps','image.mixin'],
 
     # always loaded
     'data': [
@@ -33,6 +33,7 @@
         'security/ir.model.access.csv',
         'views/catalogo.xml',
         'views/pedidos.xml',
+        'views/entregas.xml',
         'views/herencias.xml',
         'views/menus.xml',
     ],
