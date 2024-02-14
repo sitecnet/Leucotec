@@ -19,7 +19,9 @@
                         <group>
                             <field name="image_1024" widget="image" options="{'size': [150, 150]}"/>
                             <!--<field name="firma" widget="signature"/>-->
-                            <field name="comentarios"/>
+                        </group>
+                        <group>
+                        <field name="comentarios2"/>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
