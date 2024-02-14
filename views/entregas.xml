@@ -17,8 +17,8 @@
                             </group>
                         </group>
                         <group>
-                            <field name="image_1024"/>
-                            <field name="firma" widget="signature"/>
+                            <field name="image_1024" widget="image" options="{'size': [150, 150]}"/>
+                            <!--<field name="firma" widget="signature"/>-->
                             <field name="comentarios"/>
                         </group>
                     </sheet>
