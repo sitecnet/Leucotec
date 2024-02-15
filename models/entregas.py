@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, tools
 
 class entregas(models.Model):
     _name = 'leucotec.entregas'
@@ -13,3 +13,15 @@ class entregas(models.Model):
     firma = fields.Binary('Firma')
     comentarios = fields.Binary('Comentarios')
     comentarios2 = fields.Text('Comentarios')
+    picture = fields.Binary('Comentarios')
+
+    @api.model
+    def create(self,vals):
+        if 'picture' in vals:
+            image = tools.ImageProcess(vals['picture'])
+            # resize uploaded image into 250 X 250
+            resize_image = image.resize(1024, 1024)    
+            resize_image_b64 = resize_image.image_base64()   
+            vals['picture'] = resize_image_b64
+        obj = super(entregas, self).create(vals)
+        return obj

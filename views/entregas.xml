@@ -17,7 +17,7 @@
                             </group>
                         </group>
                         <group>
-                            <field name="image_1920" widget="image" options="{'size': [150, 150]}"/>
+                            <field name="picture" widget="image" options="{'size': [150, 150]}"/>
                             <!--<field name="firma" widget="signature"/>-->
                         </group>
                         <group>
