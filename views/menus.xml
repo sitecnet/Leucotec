@@ -99,4 +99,9 @@
     parent="menu_leucotec_entregas_categ" 
     action="action_leucotec_entregas_view" sequence="1"/> 
 
+    <menuitem id="menu_leucotec_entregas_action_realizadas" 
+    name="Entregas Realizadas" 
+    parent="menu_leucotec_entregas_realizadas" 
+    action="action_leucotec_entregas_view" sequence="2"/> 
+
 </odoo>
