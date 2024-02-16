@@ -74,7 +74,8 @@
 
      <!-- Menus de entregas -->
     <menuitem id="menu_leucotec_entregas_root" name="Entregas" sequence="1" web_icon="leucotec,static/src/img/entregas.png"/>
-    <menuitem id="menu_leucotec_entregas_categ" name="Entregas" parent="menu_leucotec_entregas_root" sequence="0"/>
+    <menuitem id="menu_leucotec_entregas_categ" name="Entregas" parent="menu_leucotec_entregas_root" sequence="10"/>
+    <menuitem id="menu_leucotec_entregas_realizadas" name="Entregas Realizadas" parent="menu_leucotec_entregas_root" sequence="20"/>
 
     <!-- Acciones de Ventana -->
 
@@ -83,6 +84,12 @@
       <field name="res_model">leucotec.entregas</field>
       <field name="view_mode">tree,form</field>
       <field name="domain">[('usuario','&lt;=',False)]</field>
+    </record>
+
+    <record id="action_leucotec_entregas_realizadas_view" model="ir.actions.act_window">
+      <field name="name">Leucotec Entregas Realizadas</field>
+      <field name="res_model">leucotec.entregas</field>
+      <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Acciones de Menu -->
