@@ -97,11 +97,11 @@
     <menuitem id="menu_leucotec_entregas_action" 
     name="Entregas" 
     parent="menu_leucotec_entregas_categ" 
-    action="action_leucotec_entregas_view" sequence="1"/> 
+    action="action_leucotec_entregas_view" sequence="10"/> 
 
     <menuitem id="menu_leucotec_entregas_action_realizadas" 
     name="Entregas Realizadas" 
     parent="menu_leucotec_entregas_realizadas" 
-    action="action_leucotec_entregas_view" sequence="2"/> 
+    action="action_leucotec_entregas_realizadas_view" sequence="20"/> 
 
 </odoo>
