@@ -82,6 +82,7 @@
       <field name="name">Leucotec Entregas</field>
       <field name="res_model">leucotec.entregas</field>
       <field name="view_mode">tree,form</field>
+      <field name="domain">[('usuario','&lt;=',False)]</field>
     </record>
 
     <!-- Acciones de Menu -->
