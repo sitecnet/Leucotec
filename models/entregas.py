@@ -8,12 +8,13 @@ class entregas(models.Model):
 
     name = fields.Char('Numero de pedido', required=True,)
     usuario = fields.Many2one('res.users', string='Usuario', default=lambda self: self.env.user)
-    image_1024 = fields.Image("Image", max_width=1024, max_height=1024)
-    image_1920 = fields.Image("Image", max_width=1024, max_height=1024)
+    image_1024 = fields.Image("Documento", max_width=1024, max_height=1024)
+    image_1920 = fields.Image("Documento", max_width=1024, max_height=1024)
     firma = fields.Binary('Firma')
     comentarios = fields.Binary('Comentarios')
     comentarios2 = fields.Text('Comentarios')
-    picture = fields.Binary('Comentarios')
+    picture = fields.Binary('Lugar')
+    picture_show = fields.Image("Lugar", related='picture', max_width=1024, max_height=1024, store=True, compute='_compute_picture_show')
 
     @api.model
     def create(self,vals):
