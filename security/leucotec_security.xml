@@ -57,7 +57,7 @@
             <field name="domain_force">[(1,'=',1)]</field>
             <field name="groups" eval="[(4, ref('pedidos_grupo_gerente'))]"/>
         </record>
-
+<!-- Reglas de acceso interno 
         <record model="ir.rule" id="entrega_registros_regla">
             <field name="name">Solo ver sus propias entregas</field>
             <field name="model_id" ref="model_leucotec_entregas"/>
@@ -65,7 +65,7 @@
             <field name="groups" eval="[(4, ref('entregas_grupo_repartidores'))]"/>
         </record>
 
-
+-->
          <record model="ir.rule" id="entregas_registros_supervisor_regla">
             <field name="name">Puede ver todas las entregas</field>
             <field name="model_id" ref="model_leucotec_entregas"/>
@@ -73,14 +73,14 @@
             <field name="groups" eval="[(4, ref('entregas_grupo_supervisor_entregas'))]"/>
         </record>
 
-        <record model="ir.rule" id="clientes_registros_regla">
+  <!--      <record model="ir.rule" id="clientes_registros_regla">
             <field name="name">Solo ver sus propios clientes</field>
             <field name="model_id" ref="base.model_res_partner"/>
             <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
             <field name="groups" eval="[(4, ref('pedidos_grupo_vendedores'))]"/>
         </record>
 
-
+-->
         <record model="ir.rule" id="clientes_registros_gerente_regla">
             <field name="name">Puede ver todos los clientes</field>
             <field name="model_id" ref="base.model_res_partner"/>
